@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:body>
+    <h:form>
+        <div>
+            <h:outputLabel for="name">name</h:outputLabel>
+            <h:inputText id="name" value="#{countriesBean.filterName}"/>
+        </div>
+        <div>
+            <h:outputLabel for="continent">continent</h:outputLabel>
+            <h:inputText id="continent" value="#{countriesBean.filterContinent}"/>
+        </div>
+        <div>
+            <h:outputLabel for="area">area</h:outputLabel>
+            <h:inputText id="area" value="#{countriesBean.filterArea}"/>
+        </div>
+        <div>
+            <h:outputLabel for="population">population</h:outputLabel>
+            <h:inputText id="population" value="#{countriesBean.filterPopulation}"/>
+        </div>
+        <div>
+            <h:outputLabel for="gdp">gdp</h:outputLabel>
+            <h:inputText id="gdp" value="#{countriesBean.filterGdp}"/>
+        </div>
+        <h:commandButton class="btn btn-primary mt-1" value="Submit"/>
+    </h:form>
+
+
+    <table>
+        <ui:repeat value="#{countriesBean.countries}" var="country">
+            <tr>
+                <th>#{country.name}</th>
+                <th>#{country.continent}</th>
+                <th>#{country.area}</th>
+                <th>#{country.population}</th>
+                <th>#{country.gdp}</th>
+                <th>#{country.capital}</th>
+                <th>#{country.tld}</th>
+            </tr>
+        </ui:repeat>
+    </table>
+</h:body>
+</html>
