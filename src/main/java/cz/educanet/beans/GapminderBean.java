@@ -21,24 +21,6 @@ public class GapminderBean {
         this.filterYear = filterYear;
     }
 
-    public List<Integer> getYears() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=");
-
-        PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT DISTINCT g.year FROM gapminder.gapminder AS g ORDER BY g.year"
-        );
-
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        ArrayList<Integer> years = new ArrayList<>();
-
-        while (resultSet.next()) {
-            years.add(
-                    resultSet.getInt(1)
-            );
-        }
-        return years;
-    }
 
     public List<Gapminder> getGapminders() throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=");
