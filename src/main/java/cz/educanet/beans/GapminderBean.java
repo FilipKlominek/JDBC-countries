@@ -58,9 +58,7 @@ public class GapminderBean {
                             " GROUP BY g.country" +
                             " ORDER BY g.country"
             );
-        }
-
-        preparedStatement = connection.prepareStatement(
+        } else preparedStatement = connection.prepareStatement(
                 "SELECT g.country, AVG(g.lifeExp)" +
                         " FROM gapminder.gapminder AS g" +
                         " WHERE g.year LIKE ?" +
